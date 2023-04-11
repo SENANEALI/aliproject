@@ -1,3 +1,5 @@
+
+
 const datas = {
     section: {
         title: ["Today's ", "Special"],
@@ -26,31 +28,72 @@ const datas = {
         
 }
 
-function injectTodom(){
+function injectTodom(datas){
+    
+    console.log(datas);
+}
 
-    document.querySelector("main").textContent = ""; 
 
-    const section = document.createElement("section");
-    const title = document.createElement("h2");
 
-    section.appendChild(title).textContent("Welcome to fish & chips !");
+for (const data of datas){
 
+    let section = document.querySelector("section").textContent = ""; 
+
+    let titre = document.createElement("h2");
+    titre.textContent = data.title[0]+','+data.title[1];
+
+    let aside = document.createElement("aside");
+    section.appendChild(aside);
+
+    let titre2 = document.createElement("h3");
+    titre2.textContent = data.title.lastChild;
+
+    let image = new Image();
+    Image.src = data.img ;
+
+    let p1 = document.createElement("p");
+    p1.textContent = data.para[0];
+
+    let p2 = document.createElement("p");
+    p2.textContent = data.para[1];
+
+    let p3 = document.createElement("p");
+    p3.textContent = data.para[2];
+
+    let lien = document.createElement("a");
+    lien.textContent = data.a;
+
+    
+
+
+
+    section.appendChild(titre);
+    section.appendChild(aside);
+    aside.appendChild(titre2);
+    aside.appendChild(image);
+    aside.appendChild(p1);
+    aside.appendChild(p2);
+    aside.appendChild(p3);
+    aside.appendChild(a);
+
+    
 
 }
 
 
 function clickToggleBtn(){
 
-    document.querySelector("btn-section").classList.add("hide");
-    document.querySelector("btn-aside").classList.add("hide");
+    document.querySelector("btn-section").classList.add("active");
+    document.querySelector("btn-aside").classList.add("active");
 
-    document.body.classList.add("btn-section-hide").classList.toggle("active");
-    document.body.classList.add("btn-aside-hide").classList.toggle("active");
+    document.body.classList.add("btn-section-active").classList.toggle("hide");
+    document.body.classList.add("btn-aside-active").classList.toggle("hide");
 
 
 }
 
 document.addEventListener("DOMContentLoaded", function(){
+    
     console.log();
     
     const sectionBtn = document.querySelector("section");
@@ -61,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 
 injectTodom();
+
 
 
 
