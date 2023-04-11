@@ -4,7 +4,6 @@ function injectTodom(){
     document.querySelector("main").textContent = ""; 
 
     const section1 = document.createElement("section");
-    section1.appendChild("h2")
 
 
 }
